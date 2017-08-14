@@ -72,11 +72,16 @@ else ifeq ($(COIN),peercoin)
 DEFINES += BTCHIP_P2PKH_VERSION=55 BTCHIP_P2SH_VERSION=117 BTCHIP_COIN_FAMILY=2 BTCHIP_COINID=\"Peercoin\" COINID_UPCASE=\"PPC\" COLOR_HDR=0x3790CA COLOR_DB=0x9BC8E5 COINID_NAME=\"Peercoin\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"PPC\" COIN_PEERCOIN HAVE_PEERCOIN_SUPPORT
 APPNAME ="Peercoin"
 else ifeq ($(COIN),posw)
+# Posw
 DEFINES += BTCHIP_P2PKH_VERSION=55 BTCHIP_P2SH_VERSION=85 BTCHIP_COIN_FAMILY=2 BTCHIP_COINID=\"PoSWallet\" COINID_UPCASE=\"POSW\" COLOR_HDR=0x23273D COLOR_DB=0x91939E COINID_NAME=\"PoSW\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"POSW\" COIN_POSW HAVE_PEERCOIN_SUPPORT
 APPNAME ="PoSW"
+else ifeq ($(COIN),syscoin)
+# Syscoin
+DEFINES += BTCHIP_P2PKH_VERSION=0 BTCHIP_P2SH_VERSION=5 BTCHIP_COIN_FAMILY=1 BTCHIP_COINID=\"Syscoin\" COINID_UPCASE=\"SYSCOIN\" COLOR_HDR=0xFCB653 COLOR_DB=0xFEDBA9 COINID_NAME=\"Syscoin\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"SYS\" COIN_SYSCOIN
+APPNAME ="Syscoin"
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw) 
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw, syscoin) 
 endif
 endif
 
